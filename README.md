@@ -1,27 +1,52 @@
-# TdsRecruitment
+# Currency Converter - TDS Angular Assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+Simple currency conversion tool built with Angular.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js (v16+)
+- npm (v8+)
+- Angular CLI: `npm install -g @angular/cli`
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Clone the repository**
 
-## Build
+   ```bash
+   git clone https://github.com/adiyy2001/tds-recruitment.git
+   cd tds-recruitment
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. **Install dependencies**
 
-## Running unit tests
+   ```bash
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. **Configure API Key**
 
-## Running end-to-end tests
+   Create `src/environments/environment.ts`:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```typescript
+   export const environment = {
+     production: false,
+     apiKey: 'YOUR_API_KEY_HERE'
+   };
+   ```
 
-## Further help
+   Get your API key from [CurrencyBeacon](https://currencybeacon.com/register)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4. **Run the application**
+
+   ```bash
+   ng serve
+   ```
+
+   Open browser: `http://localhost:4200`
+
+## Features
+
+- Select currencies from dropdown lists
+- Input amount to convert
+- Real-time conversion via CurrencyBeacon API
+- Error handling
