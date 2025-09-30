@@ -1,0 +1,42 @@
+ .amount-input {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #6b7280;
+    }
+
+    .amount-field {
+      padding: 0.75rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.5rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      background-color: white;
+      transition: all 0.2s;
+    }
+
+    .amount-field:hover:not(:readonly) {
+      border-color: #9ca3af;
+    }
+
+    .amount-field:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+
+    .amount-field:readonly {
+      background-color: #f9fafb;
+      cursor: not-allowed;
+    }
+
+    .amount-field::-webkit-inner-spin-button,
+    .amount-field::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }

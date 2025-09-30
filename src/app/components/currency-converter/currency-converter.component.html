@@ -1,0 +1,57 @@
+ <div class="converter-container">
+      <div class="converter-card">
+        <h1 class="converter-title">Currency Converter</h1>
+
+        <div class="converter-content">
+          <div class="currency-row">
+            <app-currency-selector
+              [currencies]="currencies()"
+              label="From"
+              inputId="from-currency"
+              [value]="fromCurrency()"
+              (valueChange)="onFromCurrencyChange($event)"
+            />
+
+            <app-amount-input
+              label="Amount"
+              inputId="from-amount"
+              [value]="fromAmount()"
+              (valueChange)="onFromAmountChange($event)"
+              placeholder="Enter amount"
+            />
+          </div>
+
+          <div class="swap-container">
+            <app-swap-button (swap)="swapCurrencies()"></app-swap-button>
+          </div>
+
+          <div class="currency-row">
+            <app-currency-selector
+              [currencies]="currencies()"
+              label="To"
+              inputId="to-currency"
+              [value]="toCurrency()"
+              (valueChange)="onToCurrencyChange($event)"
+            />
+
+            <app-amount-input
+              label="Converted Amount"
+              inputId="to-amount"
+              [value]="toAmount()"
+              [readonly]="true"
+              [placeholder]="isConverting() ? 'Converting...' : 'Result'"
+            />
+          </div>
+
+          <div class="exchange-rate" *ngIf="exchangeRate()">
+            <span class="rate-text">
+              1 {{ fromCurrency() }} = {{ exchangeRate() }} {{ toCurrency() }}
+            </span>
+          </div>
+
+          <div class="error-message" *ngIf="errorMessage()">
+            {{ errorMessage() }}
+          </div>
+        </div>
+      </div>
+    </div>

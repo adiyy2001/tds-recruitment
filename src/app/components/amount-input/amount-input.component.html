@@ -1,0 +1,14 @@
+ <div class="amount-input">
+      <label [for]="inputId">{{ label }}</label>
+      <input
+        [id]="inputId"
+        type="number"
+        [(ngModel)]="inputValue"
+        (ngModelChange)="onValueChange($event)"
+        [readonly]="readonly"
+        [placeholder]="placeholder"
+        class="amount-field"
+        min="0"
+        step="0.01"
+      />
+    </div>

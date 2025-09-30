@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CurrencyConverterComponent } from './components/currency-converter/currency-converter.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [CurrencyConverterComponent],
+  template: `<app-currency-converter />`,
+  styles: []
 })
-export class AppComponent {
-  title = 'tds-recruitment';
-}
+export class AppComponent {}

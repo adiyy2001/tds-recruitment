@@ -1,0 +1,19 @@
+<div class="currency-selector">
+  <label [for]="inputId">{{ label }}</label>
+
+  <select
+    [id]="inputId"
+    [value]="selectedValue()"
+    (change)="onSelectionChange($any($event.target).value)"
+    class="currency-select">
+
+    <option
+      *ngFor="let currency of currencies; trackBy: trackByCurrency"
+      [value]="currency.short_code">
+      {{ currency.short_code }} - {{ currency.name }}
+    </option>
+  </select>
+
+  <div *ngIf="isLoading()" class="loading-spinner">
+    Loading...
+  </div>
